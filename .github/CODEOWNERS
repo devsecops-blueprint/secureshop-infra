@@ -1,0 +1,22 @@
+# SecureShop Infrastructure — Code Ownership Rules
+#
+# These rules enforce that infrastructure changes receive
+# explicit review from the appropriate owner.
+# Format: <path pattern>  <GitHub username>
+
+# Default — everything requires your review
+*                          @madushanka-w
+
+# Security policies — most critical, explicit ownership
+security/kyverno-policies/ @madushanka-w
+security/falco-rules/      @madushanka-w
+security/tetragon-policies/@madushanka-w
+
+# Production overlay — only you can approve prod changes
+k8s/overlays/prod/         @madushanka-w
+
+# ArgoCD — controls what gets deployed
+argocd/                    @madushanka-w
+
+# Vault configuration — secrets infrastructure
+infrastructure/vault/      @madushanka-w
